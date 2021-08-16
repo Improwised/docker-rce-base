@@ -1,11 +1,13 @@
-# rce-base
+# rce-base [![Build Status](https://drone.improwised.dev/api/badges/Improwised/docker-rce-base/status.svg?ref=refs/heads/main)](https://drone.improwised.dev/Improwised/docker-rce-base)
+
 Base image for remote code execution, where all the languages are pre installed.
 
-
 ## Usage
+
 Before using this conatiner image make sure `Docker` has installed on your machine.
 
 First you need to create a `Dockerfile`.
+
 ```Dockerfile
 FROM improwised/rce-base:latest
 
@@ -22,5 +24,3 @@ RUN javac -version && \
 
 # Write your instructions..
 ```
-
-
