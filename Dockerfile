@@ -4,7 +4,8 @@ FROM node:12-alpine
 RUN \
     set -ex; \
     export PYTHONUNBUFFERED=1; \
-    apk --update add --no-cache python3 bash;\
+    apk update; \
+    apk add --no-cache python3; \
     ln -sf python3 /usr/bin/python; \
     python3 -m ensurepip; \
     pip3 install --no-cache-dir --upgrade pip setuptools
