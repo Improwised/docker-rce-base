@@ -52,7 +52,7 @@ steps:
     commands:
       - |
         set -ex
-        REPO="improwised/rce-base
+        REPO="improwised/rce-base"
         TAG="${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:7}-$(date +%s)"
         img login --username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD}
         img build --no-console -t ${REPO}:${TAG} -f Dockerfile .
