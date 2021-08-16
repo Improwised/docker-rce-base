@@ -4,8 +4,8 @@ FROM node:12-alpine
 RUN \
     set -ex; \
     export PYTHONUNBUFFERED=1; \
-    apk update; \
-    apk add --no-cache python3 && ln -sf python3 /usr/bin/python; \
+    apk --update add --no-cache python3 bash;\
+    ln -sf python3 /usr/bin/python; \
     python3 -m ensurepip; \
     pip3 install --no-cache-dir --upgrade pip setuptools
 
@@ -25,7 +25,7 @@ RUN apk add --no-cache php7
 
 ### GCC INSTALLATION
 RUN apk add --no-cache g++; \
-    apk add --no-cache alpine-sdk 
+    apk add --no-cache alpine-sdk
 
 RUN javac -version && \
     java -version && \

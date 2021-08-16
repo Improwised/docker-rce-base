@@ -52,10 +52,13 @@ steps:
     commands:
       - |
         set -ex
-        IMAGE="improwised/rce-base:${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:7}-$(date +%s)"
-        img login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
-        img build --no-console -t $IMAGE -f Dockerfile .
-        img push $IMAGE
+        REPO="improwised/rce-base
+        TAG="${DRONE_BRANCH}-${DRONE_COMMIT_SHA:0:7}-$(date +%s)"
+        img login --username=${DOCKER_USERNAME} --password=${DOCKER_PASSWORD}
+        img build --no-console -t ${REPO}:${TAG} -f Dockerfile .
+        img push ${REPO}:${TAG}
+        img tag ${REPO}:${TAG} ${REPO}:latest
+        img push ${REPO}:latest
     when:
       event:
         include:
