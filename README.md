@@ -1,4 +1,4 @@
-# rce-base [![Build Status](https://drone.improwised.dev/api/badges/Improwised/docker-rce-base/status.svg?ref=refs/heads/main)](https://drone.improwised.dev/Improwised/docker-rce-base)
+## Introduction
 
 Base image for remote code execution, where all the languages are pre installed.
 
